@@ -14,6 +14,7 @@ export class PeoplesHub extends LitElement {
             text: "Please verify your ID for Tax Information by 30th May",
             sender: "Adam Evanson",
         },
+        { text: "R&D Expo is in 2 weeks!", sender: "Janine Bookk" },
     ];
 
     @property({ type: Array }) events = [
@@ -61,7 +62,6 @@ export class PeoplesHub extends LitElement {
 
     static styles = css`
         :host {
-            display: block;
             container-type: inline-size;
             container-name: hub-container;
             font-family: Arial, sans-serif;
@@ -69,7 +69,7 @@ export class PeoplesHub extends LitElement {
 
         .hub {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(max(300px, 0%), 1fr));
+            grid-template-columns: repeat(2, minmax(300px, 1fr));
             gap: 16px;
         }
 
@@ -89,10 +89,10 @@ export class PeoplesHub extends LitElement {
             display: flex;
             flex-direction: column;
             gap: 8px;
-            padding: 4px 8px;
             border-radius: 4px;
-            max-height: 210px;
             overflow-y: auto;
+            max-height: 260px;
+            padding-inline-end: 4px;
         }
 
         .scrollable::-webkit-scrollbar {
@@ -112,9 +112,11 @@ export class PeoplesHub extends LitElement {
 
         /* Announcements */
         .announcement-section {
-          background-color: #f9f9f9;
+            background-color: #f9f9f9;
+            padding: 16px;
+            border-radius: 8px;
         }
-          
+
         .announcement-item {
             flex-grow: 0;
             display: flex;
@@ -149,9 +151,9 @@ export class PeoplesHub extends LitElement {
         }
 
         .announcement-info {
-          display: flex;
-          flex-direction: column;
-          width: 80%;
+            display: flex;
+            flex-direction: column;
+            width: 80%;
         }
 
         .announcement-title {
@@ -256,6 +258,8 @@ export class PeoplesHub extends LitElement {
             container-type: inline-size;
             container-name: event-container;
             background-color: #f9f9f9;
+            padding: 16px;
+            border-radius: 8px;
         }
 
         /* Container Queries */
@@ -313,9 +317,9 @@ export class PeoplesHub extends LitElement {
                                             ${a.sender}</span
                                         >
                                         <div>
-                                          <a href="#" class="announcement-link">
-                                            See More
-                                          </a>
+                                            <a href="#" class="announcement-link">
+                                                See More
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -338,21 +342,21 @@ export class PeoplesHub extends LitElement {
                                     />
                                     <div class="event-info">
                                         <div class="event-details">
-                                          <div class="event-name">${
-                                              e.name
-                                          }</div>
-                                          <div class="event-badge-container">
-                                              <div
-                                                  class="event-badge"
-                                                  style="background: ${
-                                                      e.color
-                                                  };"
-                                                  >${e.event}</span>
-                                              </div>
-                                              <div class="event-date">
-                                                  ${e.date}
-                                              </div>
-                                          </div>
+                                            <div class="event-name">${
+                                                e.name
+                                            }</div>
+                                            <div class="event-badge-container">
+                                                <div
+                                                    class="event-badge"
+                                                    style="background: ${
+                                                        e.color
+                                                    };"
+                                                    >${e.event}</span>
+                                                </div>
+                                                <div class="event-date">
+                                                    ${e.date}
+                                                </div>
+                                            </div>
                                         </div>
                                         <button class="button">
                                             ${e.icon}&nbsp;
@@ -362,13 +366,11 @@ export class PeoplesHub extends LitElement {
                                                     : "Wish"
                                             }
                                         </button>
-                                  </div>
-                            `
-                        )}
-                    </div>
-                </div>
-            </div>
-        `;
+                                    </div>`
+                                )}
+                            </div>
+                        </div>
+                    </div>`;
     }
 }
 
