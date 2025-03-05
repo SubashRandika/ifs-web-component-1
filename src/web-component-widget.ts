@@ -1,8 +1,8 @@
 import { LitElement, html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-@customElement("peoples-hub")
-export class PeoplesHub extends LitElement {
+@customElement("web-component-widget")
+export class WebComponentWidget extends LitElement {
     @property({ type: Array }) announcements = [
         {
             text: "Please verify your ID for Tax Information by 30th May",
@@ -376,6 +376,6 @@ export class PeoplesHub extends LitElement {
 
 declare global {
     interface HTMLElementTagNameMap {
-        "peoples-hub": PeoplesHub;
+        "web-component-widget": WebComponentWidget;
     }
 }

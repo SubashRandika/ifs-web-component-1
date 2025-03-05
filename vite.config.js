@@ -6,7 +6,7 @@ export default defineConfig({
     build: {
         outDir: "docs", // Output the build to `docs` folder for GitHub Pages
         lib: {
-            entry: "src/peoples-hub-widget.ts",
+            entry: "src/web-component-widget.ts",
             formats: ["es"],
             fileName: "index",
         },

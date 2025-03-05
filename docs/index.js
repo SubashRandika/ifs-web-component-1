@@ -15,7 +15,7 @@ const k = (s) => (e, t) => {
  * SPDX-License-Identifier: BSD-3-Clause
  */
 const h = globalThis, b = h.ShadowRoot && (h.ShadyCSS === void 0 || h.ShadyCSS.nativeShadow) && "adoptedStyleSheets" in Document.prototype && "replace" in CSSStyleSheet.prototype, _ = Symbol(), x = /* @__PURE__ */ new WeakMap();
-let U = class {
+let C = class {
   constructor(e, t, i) {
     if (this._$cssResult$ = !0, i !== _) throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");
     this.cssText = e, this.t = t;
@@ -33,7 +33,7 @@ let U = class {
     return this.cssText;
   }
 };
-const C = (s) => new U(typeof s == "string" ? s : s + "", void 0, _), O = (s, e) => {
+const U = (s) => new C(typeof s == "string" ? s : s + "", void 0, _), O = (s, e) => {
   if (b) s.adoptedStyleSheets = e.map((t) => t instanceof CSSStyleSheet ? t : t.styleSheet);
   else for (const t of e) {
     const i = document.createElement("style"), n = h.litNonce;
@@ -42,7 +42,7 @@ const C = (s) => new U(typeof s == "string" ? s : s + "", void 0, _), O = (s, e)
 }, $ = b ? (s) => s : (s) => s instanceof CSSStyleSheet ? ((e) => {
   let t = "";
   for (const i of e.cssRules) t += i.cssText;
-  return C(t);
+  return U(t);
 })(s) : s;
 /**
  * @license
@@ -683,8 +683,8 @@ y([
   S({ type: Array })
 ], p.prototype, "events", 2);
 p = y([
-  k("peoples-hub")
+  k("web-component-widget")
 ], p);
 export {
-  p as PeoplesHub
+  p as WebComponentWidget
 };

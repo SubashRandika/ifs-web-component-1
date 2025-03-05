@@ -1,5 +1,5 @@
 import { LitElement } from 'lit';
-export declare class PeoplesHub extends LitElement {
+export declare class WebComponentWidget extends LitElement {
     announcements: {
         text: string;
         sender: string;
@@ -17,6 +17,6 @@ export declare class PeoplesHub extends LitElement {
 }
 declare global {
     interface HTMLElementTagNameMap {
-        "peoples-hub": PeoplesHub;
+        "web-component-widget": WebComponentWidget;
     }
 }
