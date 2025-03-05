@@ -1,7 +1,7 @@
 {
   "name": "web-component-widget",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "description": "A reusable Lit web component",
   "main": "dist/index.js",
