@@ -1,12 +1,12 @@
 {
   "name": "web-component-widget",
   "private": false,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "description": "A reusable Lit web component",
   "main": "dist/index.js",
   "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/web-component-widget.d.ts",
   "files": [
     "dist"
   ],
@@ -19,7 +19,7 @@
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/web-component-widget.d.ts"
     }
   },
   "dependencies": {
