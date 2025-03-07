@@ -307,7 +307,7 @@ export class WebComponentWidget extends LitElement {
                     <div class="scrollable">
                         ${this.announcements.map(
                             (a) => html`
-                                <div class="announcement-item">
+                                <div class="announcement-item" @click="${{ handleEvent: () => this.onSelectAnnouncement(a) }}">
                                     <div class="icon-container">
                                         <div class="announcement-icon">🗓️</div>
                                     </div>
@@ -334,7 +334,7 @@ export class WebComponentWidget extends LitElement {
                     <div class="scrollable">
                         ${this.events.map(
                             (e) => html`
-                                <div class="event-item">
+                                <div class="event-item" @click="${{handleEvent: () => this.onSelectEvent(e)}}">
                                     <img
                                         src="${e.image}"
                                         alt="${e.name}"
@@ -371,6 +371,30 @@ export class WebComponentWidget extends LitElement {
                             </div>
                         </div>
                     </div>`;
+    }
+
+    private onSelectAnnouncement(announcement: any) {
+        if (announcement) {
+            const options = {
+                detail: announcement,
+                bubbles: true,
+                composed: true
+            };
+
+            this.dispatchEvent(new CustomEvent('onSelectAnnouncement', options));
+        }
+    }
+
+    private onSelectEvent(event: any) {
+        if (event) {
+            const options = {
+                detail: event,
+                bubbles: true,
+                composed: true
+            };
+
+            this.dispatchEvent(new CustomEvent('onSelectEvent', options));
+        }
     }
 }
 
